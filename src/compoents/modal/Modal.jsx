@@ -1,5 +1,6 @@
 import React from 'react'
 import '../modal/modalStyle.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const Modal = ({ open, btnOnclose }) => {
     if (!open) return null;
@@ -11,7 +12,7 @@ const Modal = ({ open, btnOnclose }) => {
                         <h2 className='text-black text-2xl font-semibold'>Request a Demo</h2>
                     </div>
                     <div className='text-black text-2xl btnClose'>
-                        <p onClick={btnOnclose} className='text-black text-3xl cursor-pointer'>x</p>
+                        <FontAwesomeIcon onClick={btnOnclose}  icon="fa-regular fa-xmark text-black" />
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../modal/modalStyle.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 
 const Modal = ({ open, btnOnclose }) => {
     if (!open) return null;
@@ -12,7 +12,7 @@ const Modal = ({ open, btnOnclose }) => {
                         <h2 className='text-black text-2xl font-semibold'>Request a Demo</h2>
                     </div>
                     <div className='text-black text-2xl btnClose'>
-                        <FontAwesomeIcon onClick={btnOnclose}  icon="fa-regular fa-xmark text-black" />
+                        <p onClick={btnOnclose} className='text-black text-3xl cursor-pointer'>x</p>
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@ const Modal = ({ open, btnOnclose }) => {
                         <div className='flex flex-col w-full'>
                             <div className='mb-8'>
                                 <label className='text-sm'>First name*</label>
-                                <input type="text" className='outline-none px-2 border rounded w-full h-12 mt-2' />
+                                <input type="text" className=' outline-none px-2 border rounded w-full h-12 mt-2' />
                             </div>
 
                             <div className='mb-8'>
@@ -64,7 +64,7 @@ const Modal = ({ open, btnOnclose }) => {
 
                             <label className='text-sm mb-2'>What Area Are You Working In?</label>
                             <div className='w-full flex gap-4'>
-                                <input type="checkbox" />
+                                <input type="checkbox" className='focus:ring-0' />
                                 <label>Simulation</label>
                             </div>
 
@@ -147,8 +147,6 @@ const Modal = ({ open, btnOnclose }) => {
                     <div className='flex'>
                         <div>
                             <a className='text-white font-bold bg-tinyText p-4 pl-14 pr-14  rounded-[50px] sm:w-2/2' href='#'>SUBMIT</a>
-                        </div>
-                        <div>
                         </div>
                     </div>
                 </form>

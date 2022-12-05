@@ -5,6 +5,33 @@ import 'slick-carousel/slick/slick-theme.css'
 import '../carousel/Style.css'
 
 
+
+const ImageData = [
+    {
+        id: 0,
+        imgOne: '../../assets/JOTA_logo.png'
+    },
+    {
+        id: 1,
+        imgOne: '../../assets/JOTA_logo.png'
+    },
+    {
+        id: 3,
+        imgOne: '../../assets/JOTA_logo.png'
+    },
+
+    {
+        id: 4,
+        imgOne: '../../assets/JOTA_logo.png'
+    },
+
+    {
+        id: 5,
+        imgOne: '../../assets/JOTA_logo.png'
+    },
+]
+
+console.log(ImageData);
 class logoCarousel extends Component {
     render() {
         const sliderSettings = {

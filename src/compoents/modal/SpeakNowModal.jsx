@@ -99,8 +99,7 @@ const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
                         <div>
                             <a className='text-white font-bold bg-tinyText p-4 pl-14 pr-14  rounded-[50px] sm:w-2/2' href='#'>SUBMIT</a>
                         </div>
-                        <div>
-                        </div>
+                  
                     </div>
                 </form>
             </div>

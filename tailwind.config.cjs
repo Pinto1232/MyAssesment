@@ -1,0 +1,41 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+    colors: {
+      "blue": "#001F5B",
+      "light-blue": "#0096FA",
+      "dark-light-blue": "#001F5B",
+      "ligher-blue": "#f2faff",
+      "yellow": "#FFC520",
+      "yellow-gold": "#CCB300",
+      "grey-silver": "#979797",
+      "grey-2": "#C8C8D2",
+      "grey-3": "#73737D",
+      "grey-4": "#8B8989",
+      "grey-5": "#6A6868",
+      "grey-6": "#454343",
+      "grey-7": "#C4C4C4",
+      "grey-8": "#F7F7F7",
+      "grey-9": "#D1D1D1",
+      "grey-10": "#EFEFF0",
+      "white": "#ffffff",
+      "black": "#000",
+      "table-blue": "#003173",
+      "bg-transparent": "transparent",
+      "lightGray": "#F6F8F9",
+      "light-black": "#454343",
+      "bg-grayLight": "#E5E5E5",
+      "card-color-carrer": "#F6F8F9",
+      "our-policy-txt-field-color": "#EEF1F3",
+      "our-policy-border-color": "#D1D1D1",
+      "carrer-text": "#6A6868",
+      "tinyText": "#ff5a5f",
+    }
+  },
+  plugins: [],
+}

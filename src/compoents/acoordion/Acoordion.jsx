@@ -1,5 +1,5 @@
 import React from 'react'
-import imageOne from '../../assets/banner-img.webp'
+import imageOne from '../../assets/Lender-Accordion-eVault.webp'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
@@ -18,8 +18,8 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
-              <span className='flex gap-3 mb-2 cursor-pointer'>
-                 <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
+              <span className='flex gap-3 cursor-pointer mb-4'>
+                <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
               </span>
             </div>
 
@@ -30,8 +30,8 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
-              <span className='flex items-center cursor-pointer gap-3 mb-2'>
-              <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
+              <span className='flex items-center cursor-pointer gap-3 mb-4'>
+                <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
               </span>
             </div>
             {/** Acoordion */}
@@ -41,6 +41,9 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
+              <span className='flex gap-3 cursor-pointer mb-4'>
+                <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
+              </span>
             </div>
 
             {/** Acoordion */}
@@ -51,12 +54,21 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
               </p>
             </div>
+            <span className='flex gap-3 cursor-pointer mb-4'>
+                <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
+              </span>
           </div>
 
-          <div className='rounded w-full sm:w-[50em]'>
-            <img className='bg-no-repeat  p-5 rounded-2xl h-[30em] w-full sm:w-[50em]'
-              src={imageOne}
-            />
+          {/**Image section*/}
+          <div className='rounded-xl w-full sm:w-[50em]'
+            style={{
+              backgroundImage: `url(${imageOne})`,
+              backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                height: 400,
+            }}
+          > 
           </div>
         </div>
       </div>

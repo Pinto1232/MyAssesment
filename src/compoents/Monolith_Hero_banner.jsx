@@ -28,7 +28,7 @@ const Monolith_Hero_banner = () => {
                 {/*button*/}
                 <div className='container mx-auto cursor-pointer flex gap-4 w-full mb-28'>
                     <div>
-                        <a onClick={() => setmyModel(true)} className='text-white font-bold bg-tinyText p-5 pl-14 pr-14 rounded-[50px] sm:w-auto w-full' href='#'>REQUEST DEMO</a>
+                        <a onClick={() => setmyModel(true)} className='text-white font-bold bg-tinyText p-5 pl-14 pr-14 rounded-[50px] sm:w-auto w-full hover:opacity-90 hover:bg-btnBG ' href='#'>REQUEST DEMO</a>
                     </div>
                     <div>
                         <a onClick={() => setmyModalTwo(true)} className='text-white border-2 border-tinyText p-5 pl-14 pr-14 rounded-[50px] font-bold hover:bg-tinyText hover:text-black' href='#'>SPEAK TO OUR TEAM</a>

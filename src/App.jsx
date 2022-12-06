@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Monolith_Hero_banner from './compoents/Monolith_Hero_banner'
-import Acoordion from './compoents/Acoordion'
+import Acoordion from './compoents/acoordion/Acoordion'
+
 
 function App() {
 

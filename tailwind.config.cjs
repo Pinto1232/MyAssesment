@@ -35,6 +35,7 @@ module.exports = {
       "our-policy-border-color": "#D1D1D1",
       "carrer-text": "#6A6868",
       "tinyText": "#ff5a5f",
+      "btnBG": "#ff5a5f",
     }
   },
   plugins: [],

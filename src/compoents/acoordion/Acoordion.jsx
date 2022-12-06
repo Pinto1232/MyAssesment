@@ -53,10 +53,10 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
-            </div>
-            <span className='flex gap-3 cursor-pointer mb-4'>
+              <span className='flex gap-3 cursor-pointer mb-4'>
                 <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
               </span>
+            </div>
           </div>
 
           {/**Image section*/}
@@ -64,11 +64,11 @@ const Acoordion = () => {
             style={{
               backgroundImage: `url(${imageOne})`,
               backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                height: 400,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              height: 400,
             }}
-          > 
+          >
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const Acoordion = () => {
   return (
     <div>
       <div className='container mx-auto  sm:max-w-4xl shadow-md rounded-md mt-4 mb-4 p-10'>
-        <h2 className='font-bold text-2xl mb-2'>Accelerate your digital closing transformation with the platform that's proven Pinto</h2>
+        <h2 className='font-bold text-2xl mb-2'>Accelerate your digital closing transformation with the platform that's proven</h2>
         <p className='text-md mb-8'>Seize the opportunity to differentiate with digital closings. We'll make sure you and your partners succed.</p>
         <div className='accordion_box flex flex-col sm:flex-row gap-10 '>
           <div>

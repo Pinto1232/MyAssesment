@@ -1,5 +1,6 @@
 import React from 'react'
 import imageOne from '../../assets/banner-img.webp'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 const Acoordion = () => {
@@ -17,8 +18,8 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
-              <span className='flex gap-3 mb-2'>
-                 <a className='font-semibold' href=''>Learn more</a><span className='bg-btnBG rounded-full text-white'>Icon</span>
+              <span className='flex gap-3 mb-2 cursor-pointer'>
+                 <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
               </span>
             </div>
 
@@ -29,8 +30,8 @@ const Acoordion = () => {
                 Loremipsum Loremipsum Loremipsum
                 Loremipsum Loremipsum Loremipsum
               </p>
-              <span className='flex items-center gap-3 mb-2'>
-                 <a className='font-semibold' href=''>Learn more</a><span className='bg-btnBG rounded-full text-white '>Icon</span>
+              <span className='flex items-center cursor-pointer gap-3 mb-2'>
+              <a className='font-semibold' href=''>Learn more</a><ArrowForwardIcon className='bg-btnBG rounded-full text-white' />
               </span>
             </div>
             {/** Acoordion */}

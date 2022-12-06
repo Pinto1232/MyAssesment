@@ -1,5 +1,7 @@
 import React from 'react'
 import '../modal/modalStyle.css'
+import CloseIcon from '@mui/icons-material/Close'
+
 
 
 const Modal = ({ open, btnOnclose }) => {
@@ -12,7 +14,7 @@ const Modal = ({ open, btnOnclose }) => {
                         <h2 className='text-black text-2xl font-semibold'>Request a Demo</h2>
                     </div>
                     <div className='text-black text-2xl btnClose'>
-                        <p onClick={btnOnclose} className='text-black text-3xl cursor-pointer'>x</p>
+                        <CloseIcon onClick={btnOnclose} className='text-black text-3xl cursor-pointer' />
                     </div>
                 </div>
 

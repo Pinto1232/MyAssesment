@@ -1,4 +1,5 @@
 import React from 'react'
+import CloseIcon from '@mui/icons-material/Close'
 
 const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
     if (!openModal) return null;
@@ -10,7 +11,7 @@ const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
                         <h2 className='text-black text-2xl font-semibold'>Speak to our Team</h2>
                     </div>
                     <div className='text-black text-2xl btnClose'>
-                        <p onClick={btnOncloseModal} className='text-black text-3xl cursor-pointer'>x</p>
+                        <CloseIcon onClick={btnOncloseModal} className='text-black text-3xl cursor-pointer' />
                     </div>
                 </div>
 

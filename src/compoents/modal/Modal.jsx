@@ -5,13 +5,10 @@ import CloseIcon from '@mui/icons-material/Close'
 
 
 const Modal = ({ open, btnOnclose }) => {
-    const initialFormValues = { 
-        firstName: "", 
-        businessEmail: "",
-        compaName: "", 
-        lastName: "",
-        CheckBoxSimulation: "", 
-}
+    const initialFormValues = {
+        firstName: "", businessEmail: "", compaName: "",
+        lastName: "", CheckBoxSimulation: "", checkBoxAllFields: ""
+    }
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErros, setFormsErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
@@ -50,15 +47,19 @@ const Modal = ({ open, btnOnclose }) => {
         if (!values.businessEmail) {
             errors.businessEmail = "Please complete this required field.";
         }
-        else if(!regex.test(values.businessEmail)) {
+        else if (!regex.test(values.businessEmail)) {
             errors.businessEmail = "This is not a valid business email format!"
         }
         if (!values.compaName) {
             errors.compaName = "Please complete this required field."
         }
-    
-        if(!values.CheckBoxSimulation){
+
+        if (!values.CheckBoxSimulation) {
             errors.CheckBoxSimulation = "Please select at least one option."
+        }
+
+        if (!values.checkBoxAllFields) {
+            errors.checkBoxAllFields = "Please complete all required fields."
         }
         return errors;
     }
@@ -67,7 +68,7 @@ const Modal = ({ open, btnOnclose }) => {
     return (
         <div className='overlay relative  flex justify-center items-center bg-blend-multiply '>
             <div className=' modalcontainer p-3 z-50 w-[800px] absolute shadow-xl rounded bg-white sm:mt-[-2em] h-[900px] overflow-y-auto'>
-                {/* <pre className='bg-blue text-white flex flex-col'>{JSON.stringify(formValues, undefined, 2)}</pre> */} 
+                {/* <pre className='bg-blue text-white flex flex-col'>{JSON.stringify(formValues, undefined, 2)}</pre> */}
                 <div className=' flex justify-between '>
                     <div className='mb-4 p-5'>
                         <h2 className='text-black text-2xl font-semibold'>Request a Demo</h2>
@@ -103,21 +104,21 @@ const Modal = ({ open, btnOnclose }) => {
 
                             <div className='mb-8'>
                                 <label className='text-sm'>Industry (Selection)</label>
-                                <select  className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
-                                    <option value="" >Please select</option>
-                                    <option value="">Academia/Research</option>
-                                    <option value="">Aerospace & Defence</option>
-                                    <option value="">Architecture & Construction</option>
-                                    <option value="">Electronics & Semiconductors</option>
-                                    <option value="">Energy</option>
-                                    <option value="">FMCG</option>
-                                    <option value="">Industrial</option>
-                                    <option value="">Manufactoring</option>
-                                    <option value="">Marine</option>
-                                    <option value="">Other</option>
-                                    <option value="">Packaging</option>
-                                    <option value="">Pharma</option>
-                                </select> 
+                                <select className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
+                                    <option value="select" >Please select</option>
+                                    <option value="Academia/Research">Academia/Research</option>
+                                    <option value="Aerospace & Defence">Aerospace & Defence</option>
+                                    <option value="Architecture & Construction">Architecture & Construction</option>
+                                    <option value="Electronics & Semiconductors">Electronics & Semiconductors</option>
+                                    <option value="Energy">Energy</option>
+                                    <option value="fmcg">FMCG</option>
+                                    <option value="FMCG">Industrial</option>
+                                    <option value="Manufactoring">Manufactoring</option>
+                                    <option value="Marine">Marine</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Packaging">Packaging</option>
+                                    <option value="Pharma">Pharma</option>
+                                </select>
                             </div>
                         </div>
 
@@ -146,27 +147,27 @@ const Modal = ({ open, btnOnclose }) => {
                             <label className='text-sm mb-2'>What Area Are You Working In?</label>
                             <div className='w-full flex gap-4'>
                                 <input type="checkbox" className='focus:ring-0'
-                                  name="CheckBoxSimulation"
-                                  value={formValues.CheckBoxSimulation}
-                                  onChange={handleInputChange}
+                                    name="CheckBoxSimulation"
+                                    value={formValues.CheckBoxSimulation}
+                                    onChange={handleInputChange}
                                 />
                                 <label>Simulation</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input type="checkbox" 
-                                  name="CheckBoxSimulation"
-                                  value={formValues.CheckBoxSimulation}
-                                  onChange={handleInputChange}
+                                <input type="checkbox"
+                                    name="CheckBoxSimulation"
+                                    value={formValues.CheckBoxSimulation}
+                                    onChange={handleInputChange}
                                 />
                                 <label>Testing</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input type="checkbox" 
-                                   name="CheckBoxSimulation"
-                                   value={formValues.CheckBoxSimulation}
-                                   onChange={handleInputChange}
+                                <input type="checkbox"
+                                    name="CheckBoxSimulation"
+                                    value={formValues.CheckBoxSimulation}
+                                    onChange={handleInputChange}
                                 />
                                 <label>Designing</label>
                             </div>
@@ -235,6 +236,7 @@ const Modal = ({ open, btnOnclose }) => {
                         <p>
                             Subscribe to our latest marketing offers and updates and insights. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our Privacy Policy.
                         </p>
+                        <label className='text-sm labelWarning'>{formErros.checkBoxAllFields}</label>
                     </div>
 
 

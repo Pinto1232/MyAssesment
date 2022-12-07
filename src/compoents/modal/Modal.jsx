@@ -1,40 +1,73 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../modal/modalStyle.css'
 import CloseIcon from '@mui/icons-material/Close'
 
 
 
 const Modal = ({ open, btnOnclose }) => {
-    const [firstName, setFirstName] = useState('')
-    const [businessEmail, setBusinessEmail] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [companyName, setCompanyName] = useState('')
-    const [industry_selection, setIndustrySelection] = useState('')
-    const [simulation, setSimulation] = useState('')
-    const [testing, setTesting] = useState('')
-    const [design, setDesign] = useState('')
-    const [domain_expertsBusiness, setDomainExpertBusiness] = useState('')
-    const [test_simulation, setTestSimulation] = useState('')
-    const [speed_slow, setSpeedSlow] = useState('')
-    const [slow_market, setSlowMarket] = useState('')
-    const [many_Test, setManyTest] = useState('')
-    const [eng_deadline, setEngDeadline] = useState('')
-    const [modeling_physics, setModelingPhysics] = useState('')
-    const [dificult_data, setDificultData] = useState('')
-    const [subscribe_marketing, setSubscribeMarketing] = useState('')
+    const initialFormValues = { 
+        firstName: "", 
+        businessEmail: "",
+        compaName: "", 
+        lastName: "",
+        CheckBoxSimulation: "", 
+}
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [formErros, setFormsErrors] = useState({})
+    const [isSubmit, setIsSubmit] = useState(false)
 
 
-    const handleSubmitForms = (e) => {
-        e.value;
-        console.log(firstName);
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({ ...formValues, [name]: value })
+        console.log(formValues);
     }
 
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormsErrors(validateForm(formValues))
+        setIsSubmit(true)
+    }
+
+    useEffect(() => {
+        console.log(formErros);
+        if (Object.keys(formErros).length === 0 && isSubmit) {
+            console.log(formValues);
+        }
+    }, [formErros])
+
+    const validateForm = (values) => {
+        const errors = {};
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
+
+        if (!values.firstName) {
+            errors.firstName = "Please complete this required field."
+        }
+        if (!values.lastName) {
+            errors.lastName = "Please complete this required field."
+        }
+        if (!values.businessEmail) {
+            errors.businessEmail = "Please complete this required field.";
+        }
+        else if(!regex.test(values.businessEmail)) {
+            errors.businessEmail = "This is not a valid business email format!"
+        }
+        if (!values.compaName) {
+            errors.compaName = "Please complete this required field."
+        }
+    
+        if(!values.CheckBoxSimulation){
+            errors.CheckBoxSimulation = "Please select at least one option."
+        }
+        return errors;
+    }
 
     if (!open) return null;
     return (
         <div className='overlay relative  flex justify-center items-center bg-blend-multiply '>
             <div className=' modalcontainer p-3 z-50 w-[800px] absolute shadow-xl rounded bg-white sm:mt-[-2em] h-[900px] overflow-y-auto'>
+                {/* <pre className='bg-blue text-white flex flex-col'>{JSON.stringify(formValues, undefined, 2)}</pre> */} 
                 <div className=' flex justify-between '>
                     <div className='mb-4 p-5'>
                         <h2 className='text-black text-2xl font-semibold'>Request a Demo</h2>
@@ -44,26 +77,34 @@ const Modal = ({ open, btnOnclose }) => {
                     </div>
                 </div>
 
-                <form onSubmit={handleSubmitForms} className='p-5 flex flex-col' >
+                <form onSubmit={handleSubmit} className='p-5 flex flex-col' >
                     <div className='flex w-full gap-4 mb-4'>
                         <div className='flex flex-col w-full'>
                             <div className='mb-8'>
                                 <label className='text-sm'>First name*</label>
-                                <input onChange={e => setFirstName(e.target.value)} type="text" className=' outline-none px-2 border rounded w-full h-12 mt-2' />
-                                <label className='text-sm labelWarning'>Please complete this required field.</label>
+                                <input type="text" className=' outline-none px-2 border rounded w-full h-12 mt-2'
+                                    name="firstName"
+                                    value={formValues.firstName}
+                                    onChange={handleInputChange}
+                                />
+                                <label className='text-sm labelWarning'>{formErros.firstName}</label>
                             </div>
 
                             <div className='mb-8'>
                                 <label className='text-sm'>Business Email*</label>
-                                <input onChange={e => setBusinessEmail(e.target.value)} type="text" className='outline-none px-2 border rounded w-full h-12 mt-2' />
-                                <label className='text-sm labelWarning'>Please complete this required field.</label>
+                                <input type="text" className='outline-none px-2 border rounded w-full h-12 mt-2'
+                                    name="businessEmail"
+                                    value={formValues.businessEmail}
+                                    onChange={handleInputChange}
+                                />
+                                <label className='text-sm labelWarning'>{formErros.businessEmail}</label>
                             </div>
 
 
                             <div className='mb-8'>
                                 <label className='text-sm'>Industry (Selection)</label>
-                                {/* <select  className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="" onChange={e => setIndustrySelection(e.target.value)} >
-                                    <option value="default" selected="">Please select</option>
+                                <select  className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
+                                    <option value="" >Please select</option>
                                     <option value="">Academia/Research</option>
                                     <option value="">Aerospace & Defence</option>
                                     <option value="">Architecture & Construction</option>
@@ -76,7 +117,7 @@ const Modal = ({ open, btnOnclose }) => {
                                     <option value="">Other</option>
                                     <option value="">Packaging</option>
                                     <option value="">Pharma</option>
-                                </select> */}
+                                </select> 
                             </div>
                         </div>
 
@@ -84,32 +125,52 @@ const Modal = ({ open, btnOnclose }) => {
                         <div className='flex flex-col w-full'>
                             <div className='mb-8'>
                                 <label className='text-sm'>Last name*</label>
-                                <input onChange={e => setLastName(e.target.value)} type="text" className='outline-none px-2 border rounded w-full h-12 mt-2' />
-                                <label className='text-sm labelWarning'>Please complete this required field.</label>
+                                <input type="text" className='outline-none px-2 border rounded w-full h-12 mt-2'
+                                    name="lastName"
+                                    value={formValues.lastName}
+                                    onChange={handleInputChange}
+                                />
+                                <label className='text-sm labelWarning'>{formErros.lastName}</label>
                             </div>
 
                             <div className='mb-8'>
                                 <label className='text-sm'>Company Name*</label>
-                                <input onChange={e => setCompanyName(e.target.value)} type="text" className='outline-none px-2 border rounded w-full h-12 mt-2' />
-                                <label className='text-sm labelWarning'>Please complete this required field.</label>
+                                <input type="text" className='outline-none px-2 border rounded w-full h-12 mt-2'
+                                    name="compaName"
+                                    value={formValues.compaName}
+                                    onChange={handleInputChange}
+                                />
+                                <label className='text-sm labelWarning'>{formErros.compaName}</label>
                             </div>
 
                             <label className='text-sm mb-2'>What Area Are You Working In?</label>
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setSimulation(e.target.value)} type="checkbox" className='focus:ring-0' />
+                                <input type="checkbox" className='focus:ring-0'
+                                  name="CheckBoxSimulation"
+                                  value={formValues.CheckBoxSimulation}
+                                  onChange={handleInputChange}
+                                />
                                 <label>Simulation</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setTesting(e.target.value)} type="checkbox" />
+                                <input type="checkbox" 
+                                  name="CheckBoxSimulation"
+                                  value={formValues.CheckBoxSimulation}
+                                  onChange={handleInputChange}
+                                />
                                 <label>Testing</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setDesign(e.target.value)} type="checkbox" />
+                                <input type="checkbox" 
+                                   name="CheckBoxSimulation"
+                                   value={formValues.CheckBoxSimulation}
+                                   onChange={handleInputChange}
+                                />
                                 <label>Designing</label>
                             </div>
-                            <label className='text-sm labelWarning'>Please select at least one option.</label>
+                            <label className='text-sm labelWarning'>{formErros.CheckBoxSimulation}</label>
                         </div>
                     </div>
 
@@ -117,42 +178,42 @@ const Modal = ({ open, btnOnclose }) => {
                         <div className='mb-4'>
                             <label className='mb-8'>What Is The Biggest Engineering Challenge You Are Facing?</label>
                             <div className='w-full flex gap-4 mt-4'>
-                                <input onChange={e => setDomainExpertBusiness(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Domain experts are leaving​ the business</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setTestSimulation(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Underutilised data from test & simulation</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setSpeedSlow(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Speed of development is too slow</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setSlowMarket(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Too slow to market</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setManyTest(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Running too many tests</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setEngDeadline(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Missing engineering deadlines</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setModelingPhysics(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Difficulty modelling complex physics</label>
                             </div>
 
                             <div className='w-full flex gap-4'>
-                                <input onChange={e => setDificultData(e.target.value)} type="checkbox" />
+                                <input type="checkbox" />
                                 <label>Difficulty predicting data</label>
                             </div>
                         </div>
@@ -163,7 +224,7 @@ const Modal = ({ open, btnOnclose }) => {
 
                     <div className='w-full flex mb-16'>
                         <div className='flex  items-center  gap-4 '>
-                            <input onChange={e => setSubscribeMarketing(e.target.value)} type="checkbox" />
+                            <input type="checkbox" />
                             <label className='-mb-12'>
                                 Subscribe to our latest marketing offers and updates and insights. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our Privacy Policy.
                             </label>
@@ -179,7 +240,7 @@ const Modal = ({ open, btnOnclose }) => {
 
                     <div className='flex'>
                         <div>
-                            <a type='button' className='text-white font-bold bg-tinyText p-4 pl-14 pr-14 cursor-pointer  rounded-[50px] sm:w-2/2'>SUBMIT</a>
+                            <input type="submit"  className="text-white font-bold bg-tinyText p-4 pl-14 pr-14 cursor-pointer  rounded-[50px] sm:w-2/2" />
                         </div>
                     </div>
                 </form>

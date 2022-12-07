@@ -31,7 +31,7 @@ const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
 
                             <div className='mb-8'>
                                 <label className='text-sm'>Industry (Selection)</label>
-                                <select class="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
+                                <select className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
                                     <option value="default" selected="">Please select</option>
                                     <option value="">Academia/Research</option>
                                     <option value="">Aerospace & Defence</option>
@@ -61,14 +61,14 @@ const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
                                 <input type="text" className='outline-none px-2 border rounded w-full h-12 mt-2' />
                             </div>
 
-                            <div class="mb-8"><label class="text-sm">Industry (Selection)</label><select class="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id=""><option value="default">Please select</option><option value="">Academia/Research</option><option value="">Aerospace &amp; Defence</option><option value="">Architecture &amp; Construction</option><option value="">Electronics &amp; Semiconductors</option><option value="">Energy</option><option value="">FMCG</option><option value="">Industrial</option><option value="">Manufactoring</option><option value="">Marine</option><option value="">Other</option><option value="">Packaging</option><option value="">Pharma</option></select></div>
+                            <div class="mb-8"><label className="text-sm">Industry (Selection)</label><select className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id=""><option value="default">Please select</option><option value="">Academia/Research</option><option value="">Aerospace &amp; Defence</option><option value="">Architecture &amp; Construction</option><option value="">Electronics &amp; Semiconductors</option><option value="">Energy</option><option value="">FMCG</option><option value="">Industrial</option><option value="">Manufactoring</option><option value="">Marine</option><option value="">Other</option><option value="">Packaging</option><option value="">Pharma</option></select></div>
                         </div>
                     </div>
 
                     <div className='w-full'>
-                        <div class="mb-8">
-                            <label class="text-sm">Industry (Selection)</label>
-                            <select class="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
+                        <div className="mb-8">
+                            <label className="text-sm">Industry (Selection)</label>
+                            <select className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
                                 <option value="default">Please select</option>
                                 <option value="">Academic purpose</option>
                                 <option value="">Career</option>
@@ -100,7 +100,7 @@ const SpeakNowModal = ({ openModal, btnOncloseModal }) => {
                         <div>
                             <a className='text-white font-bold bg-tinyText p-4 pl-14 pr-14  rounded-[50px] sm:w-2/2' href='#'>SUBMIT</a>
                         </div>
-                  
+
                     </div>
                 </form>
             </div>

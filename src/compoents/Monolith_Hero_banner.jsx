@@ -42,7 +42,7 @@ const Monolith_Hero_banner = () => {
 
                 {/*Modal*/}
                 <Modal open={myModel} btnOnclose={() => setmyModel(false)} />
-                <SpeakNowModal openModal={myModalTwo} btnOncloseModal={() => setmyModalTwo(false)}/>
+                <SpeakNowModal openModal={myModalTwo} btnOncloseModal={() => setmyModalTwo(false)} />
             </div>
         </div>
     )

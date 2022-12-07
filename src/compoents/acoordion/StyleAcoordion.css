@@ -1,0 +1,37 @@
+.acoordion-item_info {
+    max-width: 600px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cross {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.accordion-item_info-title {
+    position: relative;
+}
+
+.cross::after,
+.cross::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50px;
+}
+
+.cross::after {
+    transform: rotate(90deg);
+}

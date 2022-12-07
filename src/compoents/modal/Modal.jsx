@@ -240,7 +240,7 @@ const Modal = ({ open, btnOnclose }) => {
 
                     <div className='flex'>
                         <div>
-                            <input type="submit"  className="text-white font-bold bg-tinyText p-4 pl-14 pr-14 cursor-pointer  rounded-[50px] sm:w-2/2" />
+                            <input type="submit" value="SUBMIT" className="text-white font-bold bg-tinyText p-4 pl-14 pr-14 cursor-pointer  rounded-[50px] sm:w-2/2" />
                         </div>
                     </div>
                 </form>

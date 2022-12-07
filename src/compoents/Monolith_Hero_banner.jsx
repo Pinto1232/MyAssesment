@@ -13,7 +13,7 @@ const Monolith_Hero_banner = () => {
             style={{
                 backgroundColor: '#000',
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(${backgroundImage})`,
-                height: 600,
+                height: 640,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',

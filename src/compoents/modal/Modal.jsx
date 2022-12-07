@@ -25,7 +25,7 @@ const Modal = ({ open, btnOnclose }) => {
 
 
     const handleSubmitForms = (e) => {
-        e.preventDefault();
+        e.value;
         console.log(firstName);
     }
 
@@ -44,7 +44,7 @@ const Modal = ({ open, btnOnclose }) => {
                     </div>
                 </div>
 
-                <form className='p-5 flex flex-col' onSubmit={handleSubmitForms}>
+                <form onSubmit={handleSubmitForms} className='p-5 flex flex-col' >
                     <div className='flex w-full gap-4 mb-4'>
                         <div className='flex flex-col w-full'>
                             <div className='mb-8'>
@@ -179,7 +179,7 @@ const Modal = ({ open, btnOnclose }) => {
 
                     <div className='flex'>
                         <div>
-                            <a className='text-white font-bold bg-tinyText p-4 pl-14 pr-14  rounded-[50px] sm:w-2/2' href='#'>SUBMIT</a>
+                            <a type='button' className='text-white font-bold bg-tinyText p-4 pl-14 pr-14 cursor-pointer  rounded-[50px] sm:w-2/2'>SUBMIT</a>
                         </div>
                     </div>
                 </form>

@@ -105,7 +105,7 @@ const Modal = ({ open, btnOnclose }) => {
                             <div className='mb-8'>
                                 <label className='text-sm'>Industry (Selection)</label>
                                 <select className="outline-none px-2 border rounded w-full h-12 bg-white mt-2" name="" id="">
-                                    <option value="select" >Please select</option>
+                                    <option value="industry-select" >Please select</option>
                                     <option value="Academia/Research">Academia/Research</option>
                                     <option value="Aerospace & Defence">Aerospace & Defence</option>
                                     <option value="Architecture & Construction">Architecture & Construction</option>

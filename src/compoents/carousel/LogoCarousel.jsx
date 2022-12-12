@@ -19,7 +19,7 @@ class logoCarousel extends Component {
             cssEase: "linear"
         };
         return (
-            <div className='w-9/12 pl-20 gap-4'>
+            <div className='w-9/12 pl-20 gap-4 -mt-20 -sm:mt-0'>
                 <Slider {...sliderSettings}>
                     <div className='container cursor-pointer'>
                         <img className='w-[148px] h-[38px]' src='https://www.monolithai.com/hubfs/Aptar%20Logo.svg' />

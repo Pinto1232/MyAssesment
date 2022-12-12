@@ -26,7 +26,7 @@ const Monolith_Hero_banner = () => {
                 <p className='text-white text-lg font-semibold  sm:w-[750px] leading-[1.9] mb-20'>Spend less time running expensive, repetitive tests and more time learning from your engineering data to predict the exact tests to run.</p>
 
                 {/*button*/}
-                <div className='container mx-auto cursor-pointer flex gap-4 w-full mb-28'>
+                <div className='container mx-auto cursor-pointer flex flex-col sm:flex-row gap-4 w-full mb-28'>
                     <div>
                         <a onClick={() => setmyModel(true)} className='text-white font-bold bg-tinyText p-5 pl-14 pr-14 rounded-[50px] sm:w-auto w-full hover:opacity-90 hover:bg-btnBG ' href='#'>REQUEST DEMO</a>
                     </div>

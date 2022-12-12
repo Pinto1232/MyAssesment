@@ -79,7 +79,7 @@ const Modal = ({ open, btnOnclose }) => {
                 </div>
 
                 <form onSubmit={handleSubmit} className='p-5 flex flex-col' >
-                    <div className='flex w-full gap-4 mb-4'>
+                    <div className='flex flex-col w-full gap-4 mb-4'>
                         <div className='flex flex-col w-full'>
                             <div className='mb-8'>
                                 <label className='text-sm'>First name*</label>
